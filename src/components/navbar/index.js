@@ -1,4 +1,5 @@
-import './style.css';
+import style from './style.module.css';
+console.log(style);
 
 const NavBar = () => {
 
@@ -7,15 +8,15 @@ const NavBar = () => {
 
             {/* <h1>I'm nav bar</h1> */}
 
-            <div className="container">
+            <div className={style.container}>
 
-                <div className='items'>
+                <div className={style.items}>
 
-                    <h1 id='logo'>Estarta Blog</h1>
+                    <h1 id={style.logo}>Estarta Blog</h1>
 
-                    <ul className='nav-items'>
-                        <li className='li'><a href='#'>What ever</a></li>
-                        <li className='li'><button id='create-blog-button'><a href='#'>Create Blog</a></button></li>
+                    <ul className={style.navItems}>
+                        <li className={style.li}><a href='#'>What ever</a></li>
+                        <li className={style.li}><button id={style.createBlogButton}><a href='#'>Create Blog</a></button></li>
                     </ul>
                 </div>
             </div>

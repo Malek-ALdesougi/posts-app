@@ -30,7 +30,7 @@ const allPosts = [{
 
 function App() {
   return (
-    <div style={{width:'900px', margin: '0 auto'}}>
+    <div className='malek' style={{width:'800px', margin: '0 auto'}}>
       <NavBar />
       <Home blogs={allPosts}/>
     </div>

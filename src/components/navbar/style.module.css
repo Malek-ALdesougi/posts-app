@@ -23,13 +23,13 @@
     width: 400px;
 }
 
-.nav-items{
+.navItems{
     display: flex;
     justify-content: space-between;
     gap: 25px;
     align-items: center;
 }
-.nav-items a{
+.navItems a{
     text-decoration: none;
     color:rgb(0, 0, 0);
 }
@@ -39,7 +39,7 @@
     list-style-type: none;
 }
 
-#create-blog-button{
+#createBlogButton{
     all:unset;
     padding: 4px;
     border-radius: 4px;
@@ -47,7 +47,7 @@
     background-color: tomato;
 }
 
-#create-blog-button a {
+#createBlogButton a {
     text-decoration: none;
     color:white;
 }
