@@ -1,4 +1,5 @@
 import style from './style.module.css';
+import { Link } from 'react-router-dom';
 console.log(style);
 
 const NavBar = () => {
@@ -16,7 +17,7 @@ const NavBar = () => {
 
                     <ul className={style.navItems}>
                         <li className={style.li}><a href='#'>What ever</a></li>
-                        <li className={style.li}><button id={style.createBlogButton}><a href='#'>Create Blog</a></button></li>
+                        <li className={style.li}><button id={style.createBlogButton}><Link to={'/new-post'}>Create Blog</Link></button></li>
                     </ul>
                 </div>
             </div>
