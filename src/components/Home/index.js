@@ -29,10 +29,10 @@ const Home = () => {
 
                 {posts?.map((blog) => {
                     return (
-                        <div className={style.blogs} key={blog.id}>
-                            <h3>{blog.author}</h3>
-                            <Link to={`single-blog/${blog.id}`} className={style.link}>
-                                <p>{blog.content}</p>
+                        <div className={style?.blogs} key={blog?.id}>
+                            <h3>{blog?.author}</h3>
+                            <Link to={`single-blog/${blog?.id}`} className={style.link}>
+                                <p>{blog?.content}</p>
                             </Link>
                             ------
                         </div>
