@@ -16,7 +16,7 @@ const NavBar = () => {
                     <h1 id={style.logo}>Estarta Blog</h1>
 
                     <ul className={style.navItems}>
-                        <li className={style.li}><a href='#'>What ever</a></li>
+                        <li className={style.li}><Link to={'/'}>Home</Link></li>
                         <li className={style.li}><button id={style.createBlogButton}><Link to={'/new-post'}>Create Blog</Link></button></li>
                     </ul>
                 </div>

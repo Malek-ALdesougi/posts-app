@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": "Mohammed",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": 2,
+      "author": "Malek",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": 3,
+      "author": "Ali",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "id": 4,
+      "author": "Faris",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    },
+    {
+      "newPost": {
+        "id": 0,
+        "author": "issa",
+        "content": "this is content"
+      },
+      "id": 5
+    },
+    {
+      "newPost": {
+        "id": 0,
+        "author": "issan",
+        "content": "djfkdjffkdf"
+      },
+      "id": 6
+    },
+    {
+      "id": 7,
+      "author": "issa",
+      "content": "malek"
+    },
+    {
+      "id": 8,
+      "author": "malek malek malek",
+      "content": "issa issan issa isssa issa issa"
+    }
+  ]
+}
