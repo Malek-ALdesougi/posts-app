@@ -26,3 +26,15 @@ a {
     text-decoration: none;
     color:black;
 }
+
+.container2{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin-top:10px
+}
+.btn{
+    background-color: black !important;
+}

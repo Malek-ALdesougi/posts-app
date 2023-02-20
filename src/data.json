@@ -21,30 +21,16 @@
       "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
     },
     {
-      "newPost": {
-        "id": 0,
-        "author": "issa",
-        "content": "this is content"
-      },
-      "id": 5
-    },
-    {
-      "newPost": {
-        "id": 0,
-        "author": "issan",
-        "content": "djfkdjffkdf"
-      },
+      "author": "Jaber",
+      "content": "this is a very nice blog",
       "id": 6
     },
     {
-      "id": 7,
-      "author": "issa",
-      "content": "malek"
-    },
-    {
-      "id": 8,
-      "author": "malek malek malek",
-      "content": "issa issan issa isssa issa issa"
+      "author": "Majed Baker",
+      "content": "As an AI language model, I cannot provide an opinion on the effectiveness of a response as it is subjective and dependent on the situation. However, the recommended solutions aim to address the issue of an associate leaving without saying anything and offer potential solutions to help resolve the situation. Ultimately, the effectiveness of the response will depend on the context, the associate's response, and the actions taken by the supervisor.",
+      "id": 7
     }
-  ]
+  ],
+  
+  "search": []
 }

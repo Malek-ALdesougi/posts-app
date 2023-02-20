@@ -1,64 +1,89 @@
-import { useState } from 'react';
-import './style.css'
+import './style.css';
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
-const NewPost = ({editState ,blogs}) => {
+const NewPost = ({ editState, blogs }) => {
+  const navigate = useNavigate();
+  const refData = useRef({
+    author: '',
+    content: ''
+  })
 
-    const navigate = useNavigate();
-    const [newPost, setNewPost] = useState({
-        id : 0,
-        author : '',
-        content: ''
-    });
+  // const myRef = useRef();
 
-    // -------- REMEMBER ---------- 
-    // puting the e.target.name in [] to generate a dynamic key for the object
-    const handleInputs = (e) => {
-        setNewPost({...newPost, [e.target.name]: e.target.value})
-    }
+//   console.log(myRef);
 
-    // const handleSubmit = () => {
-    //     //get the id from the last element in the state of posts
-    //     newPost.id = blogs[blogs.length -1].id + 1;
-        
-    //     navigate('/');
-    // }
+//   myRef.current.onSubmit(console.log('dkjf'));
+// console.log(myRef);
 
-    function handleSubmit(event) {
-        event.preventDefault();
+  // -------- REMEMBER ----------
+  // puting the e.target.name in [] to generate a dynamic key for the object
+  const handleInputs = (e) => {
+    refData.current = {...refData.current, [e.target.name]: e.target.value }
+  }
+
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    fetch('http://localhost:8000/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(refData.current), 
+      'id' : 99,
+    })
     
-        fetch('http://localhost:8000/posts', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(newPost)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            navigate('/');
-        })
-        .catch(error => console.error(error));
-      }
+    //fex the add to the body another thing like the id 
+    // and find where is the id increasing
+    console.log(refData.current);
+    // navigate('/');
 
+    // fetch('http://localhost:8000/posts', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(newPost),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     navigate('/');
+    //   })
+    //   .catch((error) => console.error(error));
+  }
 
-    return(
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-            <fieldset id='field'>
-            <h1 id='header'>Add new Blog</h1>
-            <label id="author" htmlFor="author">Author Name :</label>
-            <input onChange={(e) => handleInputs(e)} name='author' id="author" type="text" placeholder="Enter the Auther name" />
+  return (
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <fieldset id="field">
+          <h1 id="header">Add new Blog</h1>
+          <label id="author" htmlFor="author">
+            Author Name :
+          </label>
+          <input
+            onChange={handleInputs}
+            name="author"
+            id="author"
+            type="text"
+            placeholder="Enter the Auther name"
+          />
 
-            <label htmlFor="content">Contnet :</label>
-            <textarea onChange={handleInputs} name='content' type='text' placeholder="Post content"/>
+          <label htmlFor="content">Contnet :</label>
+          <textarea
+            onChange={handleInputs}
+            name="content"
+            type="text"
+            placeholder="Post content"
+          />
 
-            <button type='submit'>Add</button>
-            </fieldset>
-            </form>
-        </div>
-    )
-}
+          <button type="submit">Add</button>
+        </fieldset>
+      </form>
+    </div>
+  );
+};
 
 export default NewPost;

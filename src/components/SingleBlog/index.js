@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../Hooks/useFetch";
+import useFetch from "../../Hooks/useFetch";
 import style from './style.module.css'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
