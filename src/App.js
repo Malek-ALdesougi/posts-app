@@ -1,7 +1,7 @@
 import style from './app.module.css'
 import NavBar from './components/navbar';
 import Home from './components/Home';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, createBrowserRouter } from 'react-router-dom';
 import NewPost from './components/NewPost/index';
 import SingleBlog from './components/SingleBlog';
 import NotFound from './components/NotFound/NotFound';
