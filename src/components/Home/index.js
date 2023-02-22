@@ -44,7 +44,7 @@ const Home = () => {
 
         <>
             <div className={style.container2}>
-                <input onChange={handleSearchInputChnage} type={'text'} placeholder={'Search a Blog'}></input>
+                <input className={style.searchInput} onChange={handleSearchInputChnage} type={'text'} placeholder={'Search a Blog'}></input>
             </div>
 
             {loading ? 'Loading ...' :
