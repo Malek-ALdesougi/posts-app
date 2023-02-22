@@ -8,7 +8,6 @@ const Home = () => {
 
     const { posts, loading, error } = useFetch('http://localhost:8000/posts');
     //TODO: i need to create a ref with an initial value of array to be able to access each component separatly
-    const authorsNamesRef = useRef([]);
     const inputRef = useRef([]);
     const [search, setSearch] = useState('');
     const [isEditable, setIsEditable] = useState({});
@@ -56,23 +55,19 @@ const Home = () => {
                             <div className={style?.blogs} key={blog?.id}>
 
                                 {!isEditable[index] ?
-                                    <>
-                                        <MDBIcon className={style.editIcon} fas icon="pen-square" onClick={() => changeEditState(index)} />
+                                    <div className={style.headerAndIconDiv}>
                                         <h3>{newValue[index] ? newValue[index] : blog?.author}</h3>
-                                    </> :
+                                        <MDBIcon className={style.editIcon} fas icon="pen-square" onClick={() => changeEditState(index)} />
+                                    </div> :
                                     <div>
-                                        <input defaultValue={newValue[index] ? newValue[index] : blog?.author} ref={(input) => inputRef.current[index] = input} type={'text'} />
-                                        <button onClick={() => handleEditAuthorName(index)} type='button'>Edit</button>
-                                        <button onClick={() => changeEditStateOpposite(index)} type='button' >Cancel</button>
+                                        <input className={style.editInput} defaultValue={newValue[index] ? newValue[index] : blog?.author} ref={(input) => inputRef.current[index] = input} type={'text'} />
+                                        <button className={style.editAndCancelBtn} onClick={() => handleEditAuthorName(index)} type='button'>Edit</button>
+                                        <button className={style.editAndCancelBtn} onClick={() => changeEditStateOpposite(index)} type='button' >Cancel</button>
                                     </div>
                                 }
                                 <Link to={`single-blog/${blog?.id}`} className={style.link}>
                                     <p>{blog?.content}</p>
                                 </Link>
-
-
-
-                                ------
                             </div>
                         )
                     })}

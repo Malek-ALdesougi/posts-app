@@ -16,6 +16,9 @@ body {
 
 .blogs {
     margin-bottom: 30px;
+    background-color:rgb(247, 247, 247);
+    padding:10px;
+    border-radius: 10px;
 }
 
 h1 {
@@ -25,6 +28,12 @@ h1 {
 a {
     text-decoration: none;
     color:black;
+}
+a:hover{
+color:tomato
+}   
+h3{
+    margin: 0px;
 }
 
 .container2{
@@ -37,6 +46,14 @@ a {
 }
 .btn{
     background-color: black !important;
+}
+
+.editInput{
+    margin-right: 3px;
+}
+.editAndCancelBtn{
+    padding: 2px;
+    margin-right: 3px;
 }
 
 .editIcon{
@@ -53,4 +70,14 @@ a {
 
 .searchInput:focus{
     outline: none;
+}
+
+.headerAndIconDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+link{
+    color:red;
 }
