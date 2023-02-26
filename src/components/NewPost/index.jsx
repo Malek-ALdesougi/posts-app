@@ -9,19 +9,11 @@ const NewPost = ({ editState, blogs }) => {
     content: ''
   })
 
-  // const myRef = useRef();
-
-//   console.log(myRef);
-
-//   myRef.current.onSubmit(console.log('dkjf'));
-// console.log(myRef);
-
   // -------- REMEMBER ----------
   // puting the e.target.name in [] to generate a dynamic key for the object
   const handleInputs = (e) => {
     refData.current = {...refData.current, [e.target.name]: e.target.value }
   }
-
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -35,24 +27,7 @@ const NewPost = ({ editState, blogs }) => {
       'id' : 99,
     })
     
-    //fex the add to the body another thing like the id 
-    // and find where is the id increasing
-    console.log(refData.current);
-    // navigate('/');
-
-    // fetch('http://localhost:8000/posts', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newPost),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     navigate('/');
-    //   })
-    //   .catch((error) => console.error(error));
+    
   }
 
   return (

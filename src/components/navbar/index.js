@@ -1,14 +1,12 @@
 import style from './style.module.css';
 import { NavLink } from 'react-router-dom';
-console.log(style);
-
 const NavBar = () => {
 
-    const handleActiveStyle = ({isActive}) => {
-        return{
+    const handleActiveStyle = ({ isActive }) => {
+        return {
             color: isActive ? "tomato" : "black",
             fontWeight: isActive ? 'bolder' : 'normal',
-            textDecoration: isActive ? 'underline': 'none'
+            textDecoration: isActive ? 'underline' : 'none'
         }
     }
 

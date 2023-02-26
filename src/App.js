@@ -6,16 +6,22 @@ import NewPost from './components/NewPost/index';
 import SingleBlog from './components/SingleBlog';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login';
+import { lazy, Suspense } from 'react';
+const MyHomeComponent = lazy(() => import('./components/Home'));
 
 function App() {
+
 
   return (
     <div className={style.app}>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/new-post' element={<NewPost/>} />
-        <Route path='/single-blog/:id' element={<SingleBlog />}/>
+        <Route path="/" element={
+        <Suspense fallback={<div className={style.loading}>Loading...</div>}>
+          <MyHomeComponent />
+        </Suspense>} />
+        <Route path='/new-post' element={<NewPost />} />
+        <Route path='/single-blog/:id' element={<SingleBlog />} />
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

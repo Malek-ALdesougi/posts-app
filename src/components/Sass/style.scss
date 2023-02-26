@@ -1,0 +1,17 @@
+$primary-color: blue;
+$myMainColor: rgb(255, 89, 0);
+@import '../../styles/mixins';
+
+
+.primary{
+    // color: $primary-color;
+    background-color: $myMainColor;
+}
+
+@mixin text {
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    color: red;
+
+}
