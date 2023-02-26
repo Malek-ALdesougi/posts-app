@@ -4,7 +4,6 @@ import { MDBIcon } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 
 
-
 const Blog = ({ blog}) => {
 
     const [isEditable, setIsEditable] = useState(false);

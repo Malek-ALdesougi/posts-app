@@ -1,13 +1,13 @@
 import style from './style.module.css'
 import useFetch from '../../Hooks/useFetch';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Blog from './Blog';
 
 const Home = () => {
 
     const { posts, loading, error } = useFetch('http://localhost:8000/posts');
     const [search, setSearch] = useState('');
-    
+
     if (loading !== false) return;
     if (error) return;
 
@@ -19,6 +19,7 @@ const Home = () => {
     return (
 
         <>
+
             <div className={style.container2}>
                 <input className={style.searchInput} onChange={handleSearchInputChnage} type={'text'} placeholder={'Search a Blog'}></input>
             </div>
