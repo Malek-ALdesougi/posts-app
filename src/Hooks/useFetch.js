@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
 
-const useFetch = (url, id) => {
+const useFetch = (url) => {
 
     // to handle fetching error using clean up methods
     const controller = new AbortController();
     const signal = controller.signal;
+
+    
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);

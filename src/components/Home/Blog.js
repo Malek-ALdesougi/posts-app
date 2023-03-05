@@ -4,12 +4,10 @@ import { MDBIcon } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 
 
-const Blog = ({ blog}) => {
+const Blog = ({blog}) => {
 
     const [isEditable, setIsEditable] = useState(false);
     const [newValue, setNewValue] = useState(blog?.author);
-
-
 
     return (
         <div className={style?.blogs}>
@@ -20,7 +18,7 @@ const Blog = ({ blog}) => {
                 </div>
                 :
                 <div>
-                    <input onChange={(e) => setNewValue(e.target.value)} className={style.editInput} defaultValue={blog?.author} type={'text'} />
+                    <input onChange={(e) => setNewValue(e.target.value)} className={style.editInput} value={newValue ? newValue : blog?.author} type={'text'} />
                     <button onClick={() => setIsEditable(false)} className={style.editAndCancelBtn} type='button'>Edit</button>
                     <button onClick={() => setIsEditable(false)} className={style.editAndCancelBtn} type='button' >Cancel</button>
                 </div>

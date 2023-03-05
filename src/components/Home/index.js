@@ -1,34 +1,44 @@
 import style from './style.module.css'
 import useFetch from '../../Hooks/useFetch';
-import { useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Blog from './Blog';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from '../../reducers/blogsReducer/actions';
 
-const Home = () => {
 
-    const { posts, loading, error } = useFetch('http://localhost:8000/posts');
+const Home = ({ children }) => {
+
+
+    const { posts, loading, error } = useSelector((state) => state);
     const [search, setSearch] = useState('');
 
-    if (loading !== false) return;
-    if (error) return;
+    // GET THE DATA USING THE REDUX STORE
+    // fire the dispatch action
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchData('http://localhost:8000/posts'));
+    }, [])
+
 
     const handleSearchInputChnage = (e) => {
         setSearch(e.target.value);
     }
 
+    if (loading !== false) return;
+    if (error) return;
 
     return (
-
         <>
-
             <div className={style.container2}>
                 <input className={style.searchInput} onChange={handleSearchInputChnage} type={'text'} placeholder={'Search a Blog'}></input>
             </div>
 
             {loading ? 'Loading ...' :
                 <div className={style.homeContainer}>
+
                     <h1>All Blogs</h1>
 
-                    {posts?.filter(item => search ? item.author.toLowerCase().includes(search.toLowerCase()) : item.author).map((blog, index) => {
+                    {loading ? 'Loading...' : posts?.filter(item => search ? item.author.toLowerCase().includes(search.toLowerCase()) : item.author).map((blog, index) => {
                         return (
                             <div className={style?.blogs} key={blog?.id}>
                                 <Blog blog={blog} />

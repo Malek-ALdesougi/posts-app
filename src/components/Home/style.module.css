@@ -52,8 +52,13 @@ h3{
     margin-right: 3px;
 }
 .editAndCancelBtn{
-    padding: 2px;
+    all:unset;
+    padding: 3px;
     margin-right: 3px;
+    background-color: tomato;
+    border-radius: 6px;
+    color: #eee;
+
 }
 
 .editIcon{
